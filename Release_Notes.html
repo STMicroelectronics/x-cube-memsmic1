@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for X-CUBE-MEMSMIC1 Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-x-cube-memsmic1">Release Notes for <mark>X-CUBE-MEMSMIC1</mark></h1>
+<p>Copyright © 2022 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The <strong>X-CUBE-MEMSMIC1</strong> software package is an expansion for <strong>STM32Cube</strong>.</p>
+<p>This software provides drivers running on <strong>STM32</strong> for the acquisition of ST digital MEMS microphones (<strong>MP34DT06J</strong>) and ST analog MEMS microphones (<strong>MP23ABS1</strong>).</p>
+<p>It is built on top of <strong>STM32Cube</strong> software technology that ease portability across different STM32 microcontrollers.</p>
+<p>X-CUBE-MEMSMIC1 also includes an example of ultrasound condition monitoring (<strong>UltrasoundFFT</strong>) that calculates the FFT of the analog microphone signal and streams the result to a PC GUI via USB.</p>
+<p>The package also offers an example to exploit the Performance Mode of the <strong>MP23DB01HP</strong> MEMS audio sensor multi performance mode digital microphone available on the <strong>STEVAL-MIC006V1</strong> coupon board.</p>
+<p><strong>X-CUBE-MEMSMIC1</strong> software features:</p>
+<ul>
+<li>Complete middleware to build applications using ST MEMS digital and analog microphones.</li>
+<li>Easy portability across different MCU families thanks to STM32Cube.</li>
+<li>Sample applications that the developer can use to start experimenting with the code.</li>
+<li>References to free application that can be used to record and save acquired microphones audio signals.</li>
+<li>Free user-friendly license terms.</li>
+<li>Examples implementation available for the following STM32 Nucleo expansion board:
+<ul>
+<li><strong>X-NUCLEO-CCA02M2</strong></li>
+<li><strong>X-NUCLEO-AMICAM1</strong></li>
+</ul></li>
+<li>The STM32 Nucleo expansion board can be plugged on top of
+<ul>
+<li><strong>NUCLEO-F401RE</strong></li>
+<li><strong>NUCLEO-L476RG</strong></li>
+<li><strong>NUCLEO-F746ZG</strong></li>
+<li><strong>P-NUCLEO-WB55</strong></li>
+<li><strong>NUCLEO-L4R5ZI</strong></li>
+</ul></li>
+<li>Examples implementation available for <strong>STEVAL-STWINKT1B</strong> and STEVAL-STWINKT1 SensorTile Wireless Industrial Node (STWIN) development kits and for the <strong>STEVAL-STWINMAV1</strong> microphone array expansion board.</li>
+</ul>
+<p>The figure below shows the overall architecture.</p>
+<p><img src="_htmresc/X-CUBE-MEMSMIC1_components.PNG" /></p>
+<ul>
+<li>At the bottom layer there are the HW components: the STM32 MCU and the MP34DT06J digital MEMS microphone or the MP23ABS1 analog MEMS microphone.</li>
+<li>The drivers abstract low level details of the hardware and allow the middleware layer to provide functionalities in a hardware independent fashion. In this particular case, middleware implements PDM to PCM decimation filter and a custom USB Audio input class.</li>
+<li>The application provide examples of how to use the code.</li>
+</ul>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> : Getting started with the software package for digital MEMS microphones in X-CUBE-MEMSMIC1 expansion for STM32Cube</li>
+<li><a href="https://www.st.com/resource/en/user_manual/dm00391112.pdf">UM2214</a> : Getting started with Acoustic BF real time beamforming library</li>
+<li><a href="https://www.st.com/resource/en/user_manual/dm00390468.pdf">UM2212</a> : Getting started with Acoustic SL real-time sound source localization middleware</li>
+<li><a href="https://www.st.com/content/st_com/en/products/audio-ics/mems-microphones/mp34dt06j.html">MP34DT06J</a> : MEMS audio sensor omnidirectional digital microphone datasheet</li>
+<li><a href="https://www.st.com/content/st_com/en/products/audio-ics/mems-microphones/mp23abs1.html">MP23ABS1</a> : High performance MEMS audio sensor single ended analog bottom-port microphone</li>
+<li><a href="https://www.st.com/stm32cube">STM32Cube</a> : STM32Cube</li>
+<li><a href="https://www.st.com/stm32nucleo">STM32 Nucleo boards</a> : STM32 Nucleo boards</li>
+<li><a href="https://www.st.com/x-nucleo">STM32 Nucleo expansion boards</a> : STM32 Nucleo expansion boards</li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section17" checked aria-hidden="true"> <label for="collapse-section17" aria-hidden="true"><strong>v5.7.0 / 31-Aug-2022</strong></label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="maintenance-release">Maintenance release</h3>
+<p>Additional features</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Added HPMicrophonesStreaming example for WB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UltrasoundFFT and GenericFFT library bug fix</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Code cleaning and licensing refactoring</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Updated HAL, Middlewares and BSP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Documentation</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.7.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Documentation\X-CUBE-MEMSMIC1.chm">CHM</a></td>
+</tr>
+</tbody>
+</table>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /AcousticBF</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F401RE-Nucleo/Demonstration/CCA02M2/Acoustic_BF/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /AcousticSL</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F401RE-Nucleo/Demonstration/CCA02M2/Acoustic_SL/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F401RE-Nucleo/Demonstration/CCA02M2/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /HP_MicStreaming</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F401RE-Nucleo/Demonstration/CCA02M2/HP_Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F746ZG-Nucleo/Demonstration/CCA02M2/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo /CCA02M2 /HP_MicStreaming</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32F746ZG-Nucleo/Demonstration/CCA02M2/HP_Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L476RG-Nucleo/Demonstration/CCA02M2/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo /AMICAM1 /MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L476RG-Nucleo/Demonstration/AMICAM1/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo /AMICAM1 /UltrasoundFFT</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L476RG-Nucleo/Demonstration/AMICAM1/UltrasoundFFT/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /AcousticBF</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R5ZI-Nucleo/Demonstration/AMICAM1/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /AcousticSL</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R5ZI-Nucleo/Demonstration/AMICAM1/Acoustic_BF/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R5ZI-Nucleo/Demonstration/AMICAM1/Acoustic_SL/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /UltrasoundFFT</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R5ZI-Nucleo/Demonstration/AMICAM1/UltrasoundFFT/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_AcousticSL</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R9ZI-STWIN/Demonstration/AMicArray_Acoustic_SL/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_MicStreaming</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R9ZI-STWIN/Demonstration/AMicArray_Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_UltrasoundFFT</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R9ZI-STWIN/Demonstration/AMicArray_UltrasoundFFT/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /MicStreaming</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R9ZI-STWIN/Demonstration/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /UltrasoundFFT</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32L4R9ZI-STWIN/Demonstration/UltrasoundFFT/readme.txt">Read Me</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32WB55RG-Nucleo/Demonstration/CCA02M2/Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WB55RG-Nucleo /CCA02M2 /HP_MicStreaming</td>
+<td style="text-align: left;">1.0.0 <span class="icon-st-add"></span></td>
+<td style="text-align: left;"><a href="Projects/STM32WB55RG-Nucleo/Demonstration/CCA02M2/HP_Microphones_Streaming/readme.txt">Read Me</a></td>
+</tr>
+</tbody>
+</table>
+<p>Middlewares</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 GenericFFT Library</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_GenericFFT_Library\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">3.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_AcousticBF_Library\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">3.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_AcousticSL_Library\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.3.0</td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_Audio\Addons\PDM\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio HP_PDM Library</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_Audio\Addons\HP_PDM\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 USB Device Library</td>
+<td style="text-align: left;">2.10.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_USB_Device_Library\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.10.0MOD <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_USB_Device_Library\Class\AUDIO\Src\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 HP_Audio USB Device Library</td>
+<td style="text-align: left;">2.10.0MOD <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_USB_Device_Library\Class\HP_AUDIO\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 SensorStreaming WCID Class</td>
+<td style="text-align: left;">1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\STM32_USB_Device_Library\Class\SensorStreaming_WCID\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Third Party/FreeRTOS</td>
+<td style="text-align: left;">10.3.1</td>
+<td style="text-align: left;"><a href="http://www.freertos.org/FreeRTOS-quick-start-guide.html">QSG</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Third Party/parson</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\parson\README.md">Read Me</a></td>
+</tr>
+</tbody>
+</table>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.8 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.7.2 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32L4xx\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.6</td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32F7xx\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.11.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32WBxx\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.8.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\STM32F4xx_HAL_Driver\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.13.2 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\STM32L4xx_HAL_Driver\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.9</td>
+<td style="text-align: left;"><a href="Drivers\STM32F7xx_HAL_Driver\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.11.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\STM32WBxx_HAL_Driver\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M2</td>
+<td style="text-align: left;">1.1.2 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\CCA02M2\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP X-NUCLEO-AMICAM1</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\AMICAM1\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STEVAL-STWINKT1B</td>
+<td style="text-align: left;">1.5.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\STWIN\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STEVAL-STWINMAV1</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\MicArrayCoupon\Release_Notes.html">Release Notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Components</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.1</td>
+<td style="text-align: left;"><a href="Drivers\BSP\Components\ad1974\Release_Notes.html">Release Notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">adau1978</td>
+<td style="text-align: left;">1.0.1</td>
+<td style="text-align: left;"><a href="Drivers\BSP\Components\adau1978\Release_Notes.html">Release Notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Utilities</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UltrasoundFFT</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Utilities\UltrasoundFFT\Release_Notes.html">Release Notes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations">Known Limitations</h2>
+<p>Requirements not met</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>High Performance Microphones Streaming</strong> example uses the new <strong>HP_PDMFilter</strong> library and is compatible only with <strong>STEVAL-MIC006V1</strong>. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.37.0</li>
+<li>STM32CubeIDE Version 1.10.1</li>
+</ul>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+<li>STEVAL-STWINKT1</li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinkt1b.html">STEVAL-STWINKT1B</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinmav1.html">STEVAL-STWINMAV1</a></li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>X-NUCLEO-CCA02M1 is not supported anymore, but you can still use this outdated board running the X-NUCLEO-CCA02M2 + NUCLEO-F401RE, NUCLEO-F746ZG or NUCLEO-L476RG examples due to HW compatibility between the two shields.</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section16" aria-hidden="true"> <label for="collapse-section16" aria-hidden="true"><strong>v5.6.0 / 17-Sep-2021</strong></label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update">Maintenance release and product update</h3>
+<p>Additional features</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Updated <strong>AcousticBF</strong> and <strong>AcousticSL</strong>, now released in source code</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Updated PDMFilter library version</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Refactored <strong>UltrasoundFFT</strong> examples, now using new <strong>GenericFFT</strong> library</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Updated HAL, Middlewares and BSP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-1">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Documentation</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.6.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /AcousticBF</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /AcousticSL</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo /CCA02M2 /HP_MicStreaming</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo /CCA02M2 /HP_MicStreaming</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo /AMICAM1 /MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo /AMICAM1 /UltrasoundFFT</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /AcousticBF</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /AcousticSL</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo /AMICAM1 /UltrasoundFFT</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_AcousticSL</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_MicStreaming</td>
+<td style="text-align: left;">1.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /AMicArray_UltrasoundFFT</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /MicStreaming</td>
+<td style="text-align: left;">1.3.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN /UltrasoundFFT</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo /CCA02M2 /MicStreaming</td>
+<td style="text-align: left;">1.3.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Middlewares</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 GenericFFT Library</td>
+<td style="text-align: left;">1.0.0 <span class="icon-st-add"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">3.0.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">3.0.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio HP_PDM Library</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 USB Device Library</td>
+<td style="text-align: left;">2.7.1 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 HP_Audio USB Device Library</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 SensorStreaming WCID Class</td>
+<td style="text-align: left;">1.2.3 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Third Party/FreeRTOS</td>
+<td style="text-align: left;">10.3.1 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Third Party/parson</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.6 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.7.1 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.6 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.9.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.7.12 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.13.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.9 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.9.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M2</td>
+<td style="text-align: left;">1.1.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP X-NUCLEO-AMICAM1</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STEVAL-STWINKT1B</td>
+<td style="text-align: left;">1.4.5 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STEVAL-STWINMAV1</td>
+<td style="text-align: left;">1.0.2</td>
+</tr>
+</tbody>
+</table>
+<p>Components</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">adau1978</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<p>Utilities</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UltrasoundFFT</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<p>Requirements not met</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>High Performance Microphones Streaming</strong> example uses the new <strong>HP_PDMFilter</strong> library and is compatible only with <strong>STEVAL-MIC006V1</strong>. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.50.9</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.32</li>
+<li>STM32CubeIDE Version 1.7.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+<li>STEVAL-STWINKT1</li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinkt1b.html">STEVAL-STWINKT1B</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinmav1.html">STEVAL-STWINMAV1</a></li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<ul>
+<li>X-NUCLEO-CCA02M1 is not supported anymore, but you can still use this outdated board running the X-NUCLEO-CCA02M2 + NUCLEO-F401RE, NUCLEO-F746ZG or NUCLEO-L476RG examples due to HW compatibility between the two shields.</li>
+</ul>
+<h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section15" aria-hidden="true"> <label for="collapse-section15" aria-hidden="true"><strong>v5.5.0 / 18-Dec-2020</strong></label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-1">Maintenance release and product update</h3>
+<ul>
+<li>Dropped support for X-NUCLEO-CCA02M1</li>
+<li>Updated audio libraries (<strong>PDMLibrary</strong>, <strong>AcousticBF</strong> and <strong>AcousticSL</strong>)</li>
+<li>Refactored <strong>UltrasoundFFT</strong> examples</li>
+<li>Updated HAL, Middlewares and BSP</li>
+</ul>
+<h2 id="contents-2">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Documentation</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.5.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticBF</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticSL</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/HP_MicStreaming</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/HP_MicStreaming</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/AMICAM1/UltrasoundFFT</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/AcousticSL</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/UltrasoundFFT</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN/AMicArray_AcousticSL</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN/AMicArray_MicStreaming</td>
+<td style="text-align: left;">1.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN/AMicArray_UltrasoundFFT</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R9ZI-STWIN/MicStreaming</td>
+<td style="text-align: left;">1.3.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R9ZI-STWIN/UltrasoundFFT</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.2.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Middlewares</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">2.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">2.3.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.2.0MOD <span class="icon-st-add"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio HP_PDM Library</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 USB Device Library</td>
+<td style="text-align: left;">2.6.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 HP_Audio USB Device Library</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 SensorStreaming WCID Class</td>
+<td style="text-align: left;">1.2.2 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Third Party/FreeRTOS</td>
+<td style="text-align: left;">10.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Third Party/parson</td>
+<td style="text-align: left;">1.1.0 <span class="icon-st-update"></span></td>
+</tr>
+</tbody>
+</table>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.7.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.7.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.7.10 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.12.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.7.0 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M2</td>
+<td style="text-align: left;">1.1.1 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP X-NUCLEO-AMICAM1</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STEVAL-STWINKT1B</td>
+<td style="text-align: left;">1.4.3 <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STEVAL-STWINMAV1</td>
+<td style="text-align: left;">1.0.2</td>
+</tr>
+</tbody>
+</table>
+<p>Components</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">adau1978</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<p>Utilities</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UltrasoundFFT</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<ul>
+<li><strong>High Performance Microphones Streaming</strong> example uses the new <strong>HP_PDMFilter</strong> library and is compatible only with <strong>STEVAL-MIC006V1</strong>. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.</li>
+<li>Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.</li>
+<li>To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.50.5</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.31</li>
+<li>STM32CubeIDE Version 1.4.2</li>
+</ul>
+<h2 id="supported-devices-and-boards-2">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+<li>STEVAL-STWINKT1</li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinkt1b.html">STEVAL-STWINKT1B</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinmav1.html">STEVAL-STWINMAV1</a></li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<ul>
+<li>X-NUCLEO-CCA02M1 is not supported anymore, but you can still use this outdated board running the X-NUCLEO-CCA02M2 + NUCLEO-F401RE, NUCLEO-F746ZG or NUCLEO-L476RG examples due to HW compatibility between the two shields.</li>
+</ul>
+<h2 id="dependencies-2">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section14" aria-hidden="true"> <label for="collapse-section14" aria-hidden="true"><strong>v5.4.0 / 10-Jul-2020</strong></label>
+<div>
+<h2 id="main-changes-3">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-2">Maintenance release and product update</h3>
+<ul>
+<li>Added <strong>HP_Microphones_Streaming</strong> examples to support <strong>STEVAL-MIC006V1</strong></li>
+<li>Minor issues solved in UltrasoundFFT and STWIN examples</li>
+<li>Updated Middlewares and BSP</li>
+</ul>
+<h2 id="contents-3">Contents</h2>
+<table>
+<caption>Documentation<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Doxygen documentation</strong></td>
+<td style="text-align: left;">5.4.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticBF</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticSL</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticBF</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticSL</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F401RE-Nucleo/CCA02M2/HP_MicStreaming</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32F746ZG-Nucleo/CCA02M2/HP_MicStreaming</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L476RG-Nucleo/AMICAM1/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/AcousticSL</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R5ZI-Nucleo/AMICAM1/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_AcousticSL</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_MicStreaming</strong></td>
+<td style="text-align: left;">1.2.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/MicStreaming</strong></td>
+<td style="text-align: left;">1.3.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.1.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">2.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 Audio HP_PDM Library</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 USB Device Library</td>
+<td style="text-align: left;">2.6.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32 HP_Audio USB Device Library</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 SensorStreaming WCID Class</strong></td>
+<td style="text-align: left;">1.2.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Third Party/FreeRTOS</td>
+<td style="text-align: left;">10.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Third Party/parson</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Drivers<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.6.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.4.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.7.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.11.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.5.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M1</td>
+<td style="text-align: left;">5.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BSP X-NUCLEO-CCA02M2</strong></td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-AMICAM1</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BSP STEVAL-STWINKT1</strong></td>
+<td style="text-align: left;">1.3.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STEVAL-STWINMAV1</td>
+<td style="text-align: left;">1.0.2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Components<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">adau1978</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Utilities<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UltrasoundFFT</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the table above, components <strong>highlighted</strong> are new or have major updates since previous release.</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li><strong>High Performance Microphones Streaming</strong> example uses the new <strong>HP_PDMFilter</strong> library and is compatible only with <strong>STEVAL-MIC006V1</strong>. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.</li>
+<li>Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.</li>
+<li>Due to hardware limitations STM32WB55 demonstration for X-NUCLEO-CCA02M1 is able to stream only one mics.</li>
+<li>To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.32.3</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.30</li>
+<li>STM32CubeIDE Version 1.3.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-3">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li>X-NUCLEO-CCA02M1</li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinkt1.html">STEVAL-STWINKT1</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinmav1.html">STEVAL-STWINMAV1</a></li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section13" aria-hidden="true"> <label for="collapse-section13" aria-hidden="true"><strong>v5.3.0 / 03-Apr-2020</strong></label>
+<div>
+<h2 id="main-changes-4">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-3">Maintenance release and product update</h3>
+<ul>
+<li>Added support for <strong>STEVAL-STWINKT1</strong> and <strong>STEVAL-STWINMAV1</strong></li>
+<li>Added <strong>UltrasoundFFT</strong> demonstration</li>
+<li>Added <strong>AcousticBF</strong> and <strong>AcousticSL</strong> example for <strong>X-NUCLEO-AMICAM1</strong></li>
+<li>Updated HAL, Middlewares and BSP</li>
+<li>General code cleaning</li>
+</ul>
+<h2 id="contents-4">Contents</h2>
+<table>
+<caption>Documentation<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.3.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticBF</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticSL</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticBF</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticSL</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L476RG-Nucleo/AMICAM1/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R5ZI-Nucleo/AMICAM1/AcousticSL</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R5ZI-Nucleo/AMICAM1/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_AcousticSL</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_MicStreaming</strong></td>
+<td style="text-align: left;">1.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/AMicArray_UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/MicStreaming</strong></td>
+<td style="text-align: left;">1.3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32L4R9ZI-STWIN/UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares  </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">2.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 USB Device Library</strong></td>
+<td style="text-align: left;">2.6.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 SensorStreaming WCID Class</strong></td>
+<td style="text-align: left;">1.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Third Party/FreeRTOS</strong></td>
+<td style="text-align: left;">10.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Third Party/parson</strong></td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Drivers  </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F4xx CMSIS</strong></td>
+<td style="text-align: left;">2.6.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4xx CMSIS</strong></td>
+<td style="text-align: left;">1.6.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F7xx CMSIS</strong></td>
+<td style="text-align: left;">1.2.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32WBxx CMSIS</strong></td>
+<td style="text-align: left;">1.4.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F4xx HAL</strong></td>
+<td style="text-align: left;">1.7.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32L4xx HAL</strong></td>
+<td style="text-align: left;">1.11.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F7xx HAL</strong></td>
+<td style="text-align: left;">1.2.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32WBxx HAL</strong></td>
+<td style="text-align: left;">1.5.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M1</td>
+<td style="text-align: left;">5.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BSP X-NUCLEO-CCA02M2</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>BSP X-NUCLEO-AMICAM1</strong></td>
+<td style="text-align: left;">1.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BSP STEVAL-STWINKT1</strong></td>
+<td style="text-align: left;">1.3.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>BSP STEVAL-STWINMAV1</strong></td>
+<td style="text-align: left;">1.0.2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Components<br />
+ </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>adau1978</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Utilities<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>UltrasoundFFT</strong></td>
+<td style="text-align: left;">1.0.1</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the table above, components <strong>highlighted</strong> are new or have major updates since previous release.</p>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.</li>
+<li>Due to hardware limitations STM32WB55 demonstration for X-NUCLEO-CCA02M1 is able to stream only one mics.</li>
+<li>To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.32.3</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.29</li>
+<li>STM32CubeIDE Version 1.3.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-4">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li>X-NUCLEO-CCA02M1</li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinkt1.html">STEVAL-STWINKT1</a></li>
+<li><a href="https://www.st.com/en/evaluation-tools/steval-stwinmav1.html">STEVAL-STWINMAV1</a></li>
+</ul>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-4">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section12" aria-hidden="true"> <label for="collapse-section12" aria-hidden="true"><strong>v5.2.0 / 17-Jan-2020</strong></label>
+<div>
+<h2 id="main-changes-5">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-4">Maintenance release and product update</h3>
+<ul>
+<li>Added support for X-NUCLEO-AMICAM1</li>
+</ul>
+<h2 id="contents-5">Contents</h2>
+<table>
+<caption>Documentation<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.2.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticBF</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticSL</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticBF</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticSL</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4R5ZI-Nucleo/AMICAM1/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: center;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: center;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Drivers<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.6.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.7.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.11.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M1</td>
+<td style="text-align: left;">5.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M2</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-AMICAM1</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Components<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ad1974</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>Beamforming and Source localization examples are available only on STM32F401 device</li>
+<li>Due to hardware limitations STM32WB55 demonstration for X-NUCLEO-CCA02M1 is able to stream only one mics.</li>
+<li>To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See <a href="https://www.st.com/resource/en/user_manual/dm00187405.pdf">UM1901</a> and <a href="https://www.st.com/resource/en/user_manual/dm00663665.pdf">UM2649</a></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.32.3 + STLink/V2</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.27.1 + ST-LINK/V2</li>
+<li>STM32CubeIDE Version 1.1.0 + ST-LINK/V2</li>
+</ul>
+<h2 id="supported-devices-and-boards-5">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401, STM32L476, STM32L4R5 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l4r5zi.html">NUCLEO-L4R5ZI</a></li>
+<li>X-NUCLEO-CCA02M1</li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-amicam1.html">X-NUCLEO-AMICAM1</a></li>
+</ul>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11" aria-hidden="true"> <label for="collapse-section11" aria-hidden="true"><strong>v5.1.0 / 6-Dec-2019</strong></label>
+<div>
+<h2 id="main-changes-6">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-5">Maintenance release and product update</h3>
+<ul>
+<li>Added support for <strong>X-NUCLEO-CCA02M2</strong></li>
+<li>Added <strong>STM32CubeIDE</strong> project</li>
+<li>SW4STM32 IDE project has been removed</li>
+</ul>
+<h2 id="contents-6">Contents</h2>
+<table>
+<caption>Documentation<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Doxygen documentation</td>
+<td style="text-align: left;">5.1.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticBF</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/AcousticSL</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticBF</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/AcousticSL</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F401RE-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F746ZG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L476RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M1/MicStreaming</td>
+<td style="text-align: right;">5.1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WB55RG-Nucleo/CCA02M2/MicStreaming</td>
+<td style="text-align: right;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32 AcousticBF Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 AcousticSL Library</td>
+<td style="text-align: left;">2.2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 Audio PDM Library</td>
+<td style="text-align: left;">3.2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 Audio USB Device Library</td>
+<td style="text-align: left;">2.4.2MOD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Drivers<br />
+</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">2.6.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">1.5.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx CMSIS</td>
+<td style="text-align: left;">1.2.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx CMSIS</td>
+<td style="text-align: left;">1.3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">1.7.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">1.10.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F7xx HAL</td>
+<td style="text-align: left;">1.2.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBxx HAL</td>
+<td style="text-align: left;">1.3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M1</td>
+<td style="text-align: left;">5.0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP X-NUCLEO-CCA02M2</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-6">Known Limitations</h2>
+<ul>
+<li>Beamforming and Source localization examples are available only on STM32F401 device</li>
+<li>Due to hardware limitations STM32WB55 demonstration for X-NUCLEO-CCA02M1 is able to stream only one mics.</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.32.3 + STLink/V2</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.27.1 + ST-LINK/V2</li>
+<li>STM32CubeIDE Version 1.1.0 + ST-LINK/V2</li>
+</ul>
+<h2 id="supported-devices-and-boards-6">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WB55, STM32F401RE, STM32L476 and STM32F746 devices</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-wb55.html">P-NUCLEO-WB55</a></li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f401re.html">NUCLEO-F401RE</a> Rev C</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-f746zg.html">NUCLEO-F746ZG</a> Rev B</li>
+<li><a href="https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-nucleo-boards/nucleo-l476rg.html">NUCLEO-L476RG</a> Rev C</li>
+<li>X-NUCLEO-CCA02M1</li>
+<li><a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-sense-hw/x-nucleo-cca02m2.html">X-NUCLEO-CCA02M2</a></li>
+</ul>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-6">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10" aria-hidden="true"> <label for="collapse-section10" aria-hidden="true"><strong>v5.0.0 / 6-May-2019</strong></label>
+<div>
+<h2 id="main-changes-7">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-6">Maintenance release and product update</h3>
+<ul>
+<li>Updated BSP, HAL and Middlewares with the latest PDM2PCM libraries available</li>
+<li>Updated CCA02M1 BSP</li>
+<li>Added support for STM32WB55</li>
+<li>Code refactoring according to BSP specification v.2.6</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>v4.0.0 / 29-Oct-2018</strong></label>
+<div>
+<h2 id="main-changes-8">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-7">Maintenance release and product update</h3>
+<ul>
+<li>Updated Middlewares with the latest PDM2PCM, AcousticBF and AcousticSL libraries available</li>
+<li>Updated X-NUCLEO-CCA02M1 BSP</li>
+<li>Code refactoring according to new BSP specification</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8"  aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>v3.0.0 / 21-Mar-2018</strong></label>
+<div>
+<h2 id="main-changes-9">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-8">Maintenance release and product update</h3>
+<ul>
+<li>Support dropped for STM32M0 and STM32L0 due to STM32 PDM2PCM library limitation</li>
+<li>Updated Middlewares with the latest PDM2PCM, AcousticBF and AcousticSL libraries available</li>
+<li>Updated HAL, based on the latest available STM32Cube HAL packages</li>
+<li>Updated X-NUCLEO-CCA02M1 BSP</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7"  aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>v2.0.1 / 7-Jul-2017</strong></label>
+<div>
+<h2 id="main-changes-10">Main Changes</h2>
+<h3 id="patch-release">Patch release</h3>
+<ul>
+<li>Acoustic libraries updated to latest version</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section6"  aria-hidden="true"> <label for="collapse-section6" aria-hidden="true"><strong>v2.0.0 / 10-Mar-2017</strong></label>
+<div>
+<h2 id="main-changes-11">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-9">Maintenance release and product update</h3>
+<ul>
+<li>New version of BSP drivers for X-NUCLEO-CCA02M1 board</li>
+<li>Includes examples of Beamforming and Source Localization libraries as well as the standard microphone acquisition</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5"  aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>v1.3.1 / 1-Sep-2016</strong></label>
+<div>
+<h2 id="main-changes-12">Main Changes</h2>
+<h3 id="patch-release-1">Patch release</h3>
+<ul>
+<li>Modified #define directives to set the size of audio buffer</li>
+<li>New version of BSP drivers to grant compatibility with L4 HAL layer</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4"  aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>v1.3.0 / 13-Jun-2016</strong></label>
+<div>
+<h2 id="main-changes-13">Main Changes</h2>
+<h3 id="maintenance-release-1">Maintenance release</h3>
+<ul>
+<li>General update on STM32Cube drivers</li>
+<li>GenAdded support for NUCLEO-F746ZG</li>
+<li>PDM to PCM library aligned with latest release</li>
+<li>New version of BSP drivers</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3"  aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>v1.2.0 / 11-Jan-2016</strong></label>
+<div>
+<h2 id="main-changes-14">Main Changes</h2>
+<h3 id="maintenance-release-2">Maintenance release</h3>
+<ul>
+<li>Added support for STM32L4 with DFSDM peripheral</li>
+<li>General update on STM32Cube package</li>
+<li>Minor changes in BSP layer</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section2"  aria-hidden="true"> <label for="collapse-section2" aria-hidden="true"><strong>v1.1.0 / 4-Jun-2015</strong></label>
+<div>
+<h2 id="main-changes-15">Main Changes</h2>
+<h3 id="maintenance-release-3">Maintenance release</h3>
+<ul>
+<li>Added support for latest version of System Workbench for STM32 (SW4STM32) (v1.2.0)
+<ul>
+<li>STM32F4 FPU support enabled</li>
+<li>Removed compiling options in USB files not compatible with new version of the IDE</li>
+</ul></li>
+<li>STM32F4 HAL drivers updated to version 1.3.1</li>
+<li>Minor changes in BSP layer (BSP_AUDIO_IN_Record() function) and clock pin initial state (PULLUP)</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1"  aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>v1.0.0 / 11-Jan-2016</strong></label>
+<div>
+<h2 id="main-changes-16">Main Changes</h2>
+<h3 id="first-official-release">First official release</h3>
+<ul>
+<li>First official release of firmware for X-NUCLEO-CCA02M1 Expansion Board</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<div class="columns">
+<div class="column" style="width:95%;">
+<p>For complete documentation on <strong>X-CUBE-MEMSMIC1</strong> , visit: <a href="https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-memsmic1.html">www.st.com</a></p>
+</div><div class="column" style="width:5%;">
+<p><abbr title="Based on template cx566953 version 2.0">Info</abbr></p>
+</div>
+</div>
+</footer>
+</body>
+</html>
