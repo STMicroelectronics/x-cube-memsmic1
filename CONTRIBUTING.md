@@ -8,7 +8,7 @@ This guide mainly focuses on steps to be followed to submit an issue.
 ### 1. Before opening an issue
 
 To report a bug/request please file an issue in the right repository
-(example for [x-cube-soundter1](https://github.com/STMicroelectronics/x-cube-memsmic1/issues/new/choose)).
+(example for [x-cube-memsmic1](https://github.com/STMicroelectronics/x-cube-memsmic1/issues/new/choose)).
 
 
 Please check the following boxes before posting an issue:

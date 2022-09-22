@@ -54,13 +54,9 @@ Here is the list of references to user documents:
 
 ## Known Limitations
 
-Requirements not met
-
-  Headline
-  ----------------------------------------------------------
-  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
-  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
-  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
+-  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
+-  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
+-  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
 
 ## Development Toolchains and Compilers
 
