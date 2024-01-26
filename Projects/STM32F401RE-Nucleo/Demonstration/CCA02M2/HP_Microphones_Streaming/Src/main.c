@@ -89,7 +89,7 @@ int main(void)
 #ifdef DISABLE_USB_DRIVEN_ACQUISITION
   Init_Acquisition_Peripherals(AUDIO_IN_SAMPLING_FREQUENCY, AUDIO_IN_CHANNELS, AUDIO_IN_BIT_DEPTH);
   Start_Acquisition();
-#endif
+#endif /* DISABLE_USB_DRIVEN_ACQUISITION */
 
   while (1)
   {

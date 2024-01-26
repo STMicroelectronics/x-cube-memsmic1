@@ -83,7 +83,7 @@
 #if defined(__ICCARM__) || defined(__CC_ARM) || defined(__GNUC__)
 #include <stdint.h>
 extern uint32_t SystemCoreClock;
-#endif
+#endif /* defined(__ICCARM__) || defined(__CC_ARM) || defined(__GNUC__) */
 
 #define configUSE_PREEMPTION                    1
 #define configUSE_IDLE_HOOK                     0
@@ -135,7 +135,7 @@ to exclude the API function. */
 #define configPRIO_BITS                        __NVIC_PRIO_BITS
 #else
 #define configPRIO_BITS                        4        /* 15 priority levels */
-#endif
+#endif /* __NVIC_PRIO_BITS */
 
 /* The lowest interrupt priority that can be used in a call to a "set priority"
 function. */
@@ -170,7 +170,7 @@ header file. */
 #if (configUSE_APPLICATION_TASK_TAG == 1)
 #define traceTASK_SWITCHED_IN() BSP_DEBUG_PIN_On((int)pxCurrentTCB->pxTaskTag)
 #define traceTASK_SWITCHED_OUT() BSP_DEBUG_PIN_Off((int)pxCurrentTCB->pxTaskTag)
-#endif
+#endif /* (configUSE_APPLICATION_TASK_TAG == 1) */
 
 
 #endif /* FREERTOS_CONFIG_H */

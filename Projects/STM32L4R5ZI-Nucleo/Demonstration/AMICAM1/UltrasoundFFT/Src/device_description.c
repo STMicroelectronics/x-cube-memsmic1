@@ -138,7 +138,7 @@ void set_default_description(void)
 
 void update_sensorStatus(COM_SensorStatus_t *oldSensorStatus, COM_SensorStatus_t *newSensorStatus, uint8_t sID)
 {
-  /* Check differencies between oldSensorStatus and newSensorStatus, act properly*/
+  /* Check differences between oldSensorStatus and newSensorStatus, act properly*/
   /* ODR */
   if (oldSensorStatus->ODR != newSensorStatus->ODR)
   {

@@ -23,6 +23,11 @@
 #ifndef __AUDIO_APPLICATION_H
 #define __AUDIO_APPLICATION_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "cube_hal.h"
 
@@ -72,6 +77,9 @@ void AudioProcess(void);
   */
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __AUDIO_APPLICATION_H */
 

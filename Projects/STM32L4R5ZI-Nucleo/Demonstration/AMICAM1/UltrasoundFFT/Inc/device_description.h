@@ -23,6 +23,11 @@
 #ifndef __DEVICE_DESCRIPTION_H
 #define __DEVICE_DESCRIPTION_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "com_manager.h"
 #include "sensors_manager.h"
@@ -37,8 +42,9 @@ void update_sensorStatus(COM_SensorStatus_t *oldSensorStatus, COM_SensorStatus_t
 void update_sensors_config(void);
 
 
-
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __DEVICE_DESCRIPTION_H */
 

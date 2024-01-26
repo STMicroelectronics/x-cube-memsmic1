@@ -45,7 +45,7 @@ modification in the application layer developed with the older versions of the d
 #define N_MS        (N_MS_PER_INTERRUPT)
 
 #define AUDIO_IN_CHANNELS   2
-#define AUDIO_IN_SAMPLING_FREQUENCY 16000
+#define AUDIO_IN_SAMPLING_FREQUENCY 192000
 #define AUDIO_IN_INSTANCE           AUDIO_IN_INSTANCE_ADC_EXT
 #define AUDIO_IN_MICS               AUDIO_IN_ANALOG_MIC1|AUDIO_IN_ANALOG_MIC2
 

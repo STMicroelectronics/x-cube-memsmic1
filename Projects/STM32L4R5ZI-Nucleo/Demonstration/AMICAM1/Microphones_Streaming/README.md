@@ -13,7 +13,7 @@ NOTE: if you want to use a sampling frequency of 16KHz, you must close the soldi
 SB11 to pass to the on-board ADC a required extra signal, the I2S master clock. 
 
 A analog MEMS microphone can be acquired by using different peripherals, 
-such as  I²S, SPI or DFSDM, using on-board external ADC or STM32 embedded ADC.
+such as  I2S, SPI or DFSDM, using on-board external ADC or STM32 embedded ADC.
 
 At the beginning of the main program the HAL_Init() function is called to reset 
 all the peripherals. 

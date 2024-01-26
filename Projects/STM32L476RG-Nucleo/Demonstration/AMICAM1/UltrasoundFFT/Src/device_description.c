@@ -62,7 +62,7 @@ static void get_unique_id(char *id)
   id[5] = (deviceserial[2] >> 16) & 0xFF;
   id[6] = (deviceserial[2] >> 24) & 0xFF;
 
-  int n;
+  int32_t n;
   char *p = &id[7];
 
   n = sprintf(p, "%03u", waf_num);
@@ -138,7 +138,7 @@ void set_default_description(void)
 
 void update_sensorStatus(COM_SensorStatus_t *oldSensorStatus, COM_SensorStatus_t *newSensorStatus, uint8_t sID)
 {
-  /* Check differencies between oldSensorStatus and newSensorStatus, act properly*/
+  /* Check differences between oldSensorStatus and newSensorStatus, act properly*/
   /* ODR */
   if (oldSensorStatus->ODR != newSensorStatus->ODR)
   {
@@ -155,7 +155,7 @@ void update_sensorStatus(COM_SensorStatus_t *oldSensorStatus, COM_SensorStatus_t
   }
 
   /* subsensor: FS, is Active*/
-  for (int i = 0; i < COM_GetSubSensorNumber(sID); i++)
+  for (uint8_t i = 0; i < COM_GetSubSensorNumber(sID); i++)
   {
     if (oldSensorStatus->subSensorStatus[i].FS != newSensorStatus->subSensorStatus[i].FS)
     {

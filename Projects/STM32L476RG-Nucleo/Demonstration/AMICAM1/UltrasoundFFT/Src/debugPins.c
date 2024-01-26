@@ -72,7 +72,7 @@ void DEBUG_PIN_Init_All(void)
   DEBUG_PIN_Off(DEBUG_PIN19);
   DEBUG_PIN_Off(DEBUG_PIN20);
 
-  DEBUG_PIN_Init(DEBUG_PIN7); // Pin7 is for IDLE thread
+  DEBUG_PIN_Init(DEBUG_PIN7); /* Pin7 is for IDLE thread */
   DEBUG_PIN_Init(DEBUG_PIN8);
   DEBUG_PIN_Init(DEBUG_PIN9);
   DEBUG_PIN_Init(DEBUG_PIN10);

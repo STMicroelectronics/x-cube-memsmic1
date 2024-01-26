@@ -23,6 +23,11 @@
 #ifndef __USBD_CONF_H
 #define __USBD_CONF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 #include <stdio.h>
@@ -72,6 +77,11 @@
 #endif
 
 /* Exported functions ------------------------------------------------------- */
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_CONF_H */
 

@@ -51,6 +51,10 @@ extern "C" {
 #define BSP_ERROR_BUS_CRC_ERROR              -106
 #define BSP_ERROR_BUS_DMA_FAILURE            -107
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif /*STM32L4XX_NUCLEO_ERRNO_H */
 
 

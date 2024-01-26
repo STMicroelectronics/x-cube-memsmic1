@@ -23,6 +23,11 @@
 #ifndef COM_H
 #define COM_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 /* Exported types ------------------------------------------------------------*/
 /* Exported defines ----------------------------------------------------------*/
@@ -50,5 +55,10 @@
 /* Exported functions --------------------------------------------------------*/
 
 void Uart_Init(void);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* COM_H */

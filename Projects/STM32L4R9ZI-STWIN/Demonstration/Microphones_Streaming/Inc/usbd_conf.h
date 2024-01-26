@@ -23,6 +23,11 @@
 #ifndef __USBD_CONF_H
 #define __USBD_CONF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 
@@ -89,6 +94,11 @@ extern PCD_HandleTypeDef hpcd;
 #endif  /* (USBD_DEBUG_LEVEL > 2) */
 
 /* Exported functions ------------------------------------------------------- */
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_CONF_H */
 

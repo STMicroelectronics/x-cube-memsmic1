@@ -54,13 +54,13 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update history</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section9" checked aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"> v3.1.0 / 31-Aug-2022 </label>
+<input type="checkbox" id="collapse-section10" checked aria-hidden="true"> <label for="collapse-section10" aria-hidden="true"> v3.1.1 / 5-May-2023 </label>
 <div>
 <h2 id="main-changes">Main changes</h2>
-<h3 id="maintenance-release">Maintenance release</h3>
+<h3 id="patch-release">Patch release</h3>
 <ul>
-<li>Added header license neutral</li>
-<li>Added licence files</li>
+<li>Bug fixed for softfp libraries</li>
+<li>Updated version returned by libSoundSourceLoc_GetLibVersion</li>
 </ul>
 <h2 id="known-limitations">Known limitations</h2>
 <ul>
@@ -85,12 +85,13 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"> v3.0.0 / 8-Sep-2021 </label>
+<input type="checkbox" id="collapse-section9" checked aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"> v3.1.0 / 31-Aug-2022 </label>
 <div>
 <h2 id="main-changes-1">Main changes</h2>
-<h3 id="product-update">Product update</h3>
+<h3 id="maintenance-release">Maintenance release</h3>
 <ul>
-<li>Released library in source code</li>
+<li>Added header license neutral</li>
+<li>Added licence files</li>
 </ul>
 <h2 id="known-limitations-1">Known limitations</h2>
 <ul>
@@ -98,6 +99,36 @@
 <li>For other purposes, source code is available</li>
 </ul>
 <h2 id="development-toolchains-and-compilers-1">Development toolchains and compilers</h2>
+<ul>
+<li>ARM GCC compiler, softfp and hardfp options
+<ul>
+<li>With Keil use wc16_softfp version</li>
+<li>With IAR 8 or STM32CubeIDE use wc32 or wc32_softfp version</li>
+<li>With IAR 7 use wc16 or wc16_softfp version</li>
+</ul></li>
+<li>Source code version has been tested in
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.37</li>
+<li>STM32CubeIDE Version 1.10.1</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"> v3.0.0 / 8-Sep-2021 </label>
+<div>
+<h2 id="main-changes-2">Main changes</h2>
+<h3 id="product-update">Product update</h3>
+<ul>
+<li>Released library in source code</li>
+</ul>
+<h2 id="known-limitations-2">Known limitations</h2>
+<ul>
+<li>The compiled version of the library supports MCUs based on M33, M4 and M7 cores with FPU unit.</li>
+<li>For other purposes, source code is available</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development toolchains and compilers</h2>
 <ul>
 <li>ARM GCC compiler, softfp and hardfp options
 <ul>
@@ -117,17 +148,17 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"> v2.3.0 / 18-Dec-2020 </label>
 <div>
-<h2 id="main-changes-2">Main changes</h2>
+<h2 id="main-changes-3">Main changes</h2>
 <h3 id="product-update-1">Product update</h3>
 <ul>
 <li>Added support for Cortex M33</li>
 <li>Added hardfp compiled version libraries</li>
 </ul>
-<h2 id="known-limitations-2">Known limitations</h2>
+<h2 id="known-limitations-3">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M33, M4 and M7 cores with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-3">Development toolchains and compilers</h2>
 <ul>
 <li>ARM GCC compiler, softfp and hardfp options
 <ul>
@@ -141,16 +172,16 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true"> v2.2.0 / 29-Mar-2019 </label>
 <div>
-<h2 id="main-changes-3">Main changes</h2>
+<h2 id="main-changes-4">Main changes</h2>
 <h3 id="maintenance-release-1">Maintenance release</h3>
 <ul>
 <li>Unification of the librariy to single EABI library per Cortex core and wchar size</li>
 </ul>
-<h2 id="known-limitations-3">Known limitations</h2>
+<h2 id="known-limitations-4">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M4 and M7 cores with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-3">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-4">Development toolchains and compilers</h2>
 <ul>
 <li>ARM GCC compiler, softfp options</li>
 </ul>
@@ -159,16 +190,16 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"> v2.1.1 / 15-Feb-2018 </label>
 <div>
-<h2 id="main-changes-4">Main changes</h2>
+<h2 id="main-changes-5">Main changes</h2>
 <h3 id="maintenance-and-patch-release">Maintenance and patch release</h3>
 <ul>
 <li>Added support for STM32H7</li>
 </ul>
-<h2 id="known-limitations-4">Known limitations</h2>
+<h2 id="known-limitations-5">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M4 and M7 cores with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-4">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-5">Development toolchains and compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.24.1</li>
@@ -179,17 +210,17 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"> v2.0.1 / 12-Jul-2017 </label>
 <div>
-<h2 id="main-changes-5">Main changes</h2>
-<h3 id="patch-release">Patch release</h3>
+<h2 id="main-changes-6">Main changes</h2>
+<h3 id="patch-release-1">Patch release</h3>
 <ul>
 <li>Added IAR 8.11 support.</li>
 </ul>
-<h2 id="known-limitations-5">Known limitations</h2>
+<h2 id="known-limitations-6">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M4 and M7 cores with FPU unit.</li>
 <li>A compiler warning is generated when using the library in IAR v 7.x. It doesn’t affect library performances.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-5">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-6">Development toolchains and compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.11 (backward compatible with IAR 7.x)</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23</li>
@@ -200,16 +231,16 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"> v2.0.0 / 08-Mar-2017 </label>
 <div>
-<h2 id="main-changes-6">Main changes</h2>
+<h2 id="main-changes-7">Main changes</h2>
 <h3 id="product-update-2">Product update</h3>
 <ul>
 <li>First version of the library published under the ODE initiative. Previously released as part of OSX framework.</li>
 </ul>
-<h2 id="known-limitations-6">Known limitations</h2>
+<h2 id="known-limitations-7">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M4 and M7 cores with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-6">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-7">Development toolchains and compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.70 + ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
@@ -220,18 +251,18 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section2" aria-hidden="true"> <label for="collapse-section2" aria-hidden="true"> v1.1.0 / 01-Sep-2016 </label>
 <div>
-<h2 id="main-changes-7">Main changes</h2>
+<h2 id="main-changes-8">Main changes</h2>
 <h3 id="maintenance-release-2">Maintenance release</h3>
 <ul>
 <li>Added new DOA estimation algorithm (BMPH)</li>
 <li>Removed include of the license file from the library header</li>
 <li>Added support for M7 cores</li>
 </ul>
-<h2 id="known-limitations-7">Known limitations</h2>
+<h2 id="known-limitations-8">Known limitations</h2>
 <ul>
 <li>The provided library supports MCUs based on M4 and M7 cores with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-7">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development toolchains and compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.70 + ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.20 + ST-LINK</li>
@@ -242,16 +273,16 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"> v1.0.0 / 15-Sep-2015 </label>
 <div>
-<h2 id="main-changes-8">Main changes</h2>
+<h2 id="main-changes-9">Main changes</h2>
 <h3 id="first-release">First release</h3>
 <ul>
 <li>First official version of the library.</li>
 </ul>
-<h2 id="known-limitations-8">Known limitations</h2>
+<h2 id="known-limitations-9">Known limitations</h2>
 <ul>
 <li>The provided library supports STM32F4xx devices with FPU unit.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-8">Development toolchains and compilers</h2>
+<h2 id="development-toolchains-and-compilers-9">Development toolchains and compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.30 + ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.12 + ST-LINK</li>

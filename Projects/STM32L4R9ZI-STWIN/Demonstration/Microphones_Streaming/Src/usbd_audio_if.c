@@ -133,16 +133,14 @@ static int8_t Audio_VolumeCtl(int16_t Volume)
 {
   /* Call low layer volume setting function */
   uint32_t j = 0;
-  uint32_t mic_instance;
 
   /* Find the setting nearest to the desired setting */
   while (j < 64 && abs(Volume - vol_table[j]) > abs(Volume - vol_table[j + 1]))
   {
     j++;
   }
-  mic_instance = 0;
   /* Now do the volume adjustment */
-  return BSP_AUDIO_IN_SetVolume(mic_instance, j);
+  return BSP_AUDIO_IN_SetVolume(BSP_AUDIO_IN_INSTANCE, j);
 
 
 }

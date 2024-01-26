@@ -179,7 +179,7 @@ static int8_t WCID_STREAMING_Itf_Control(uint8_t isHostToDevice, uint8_t cmd, ui
             myDeviceDescriptor = COM_GetDeviceDescriptor();
             SM_TIM_Start();
 
-            for (int i = 0; i < myDeviceDescriptor->nSensor; i++)
+            for (uint8_t i = 0; i < myDeviceDescriptor->nSensor; i++)
             {
               myStatus = COM_GetSensorStatus(i);
 
@@ -213,7 +213,7 @@ static int8_t WCID_STREAMING_Itf_Control(uint8_t isHostToDevice, uint8_t cmd, ui
             USBD_WCID_STREAMING_StopStreaming(&USBD_Device);
             com_status = HS_DATALOG_IDLE;
 
-            for (int i = 0; i < N_CHANNELS_MAX; i++)
+            for (uint8_t i = 0; i < N_CHANNELS_MAX; i++)
             {
               if (TxBuffer[i] != NULL)
               {
@@ -224,7 +224,7 @@ static int8_t WCID_STREAMING_Itf_Control(uint8_t isHostToDevice, uint8_t cmd, ui
 
             myDeviceDescriptor = COM_GetDeviceDescriptor();
 
-            for (int i = 0; i < myDeviceDescriptor->nSensor; i++)
+            for (uint8_t i = 0; i < myDeviceDescriptor->nSensor; i++)
             {
               myStatus = COM_GetSensorStatus(i);
 

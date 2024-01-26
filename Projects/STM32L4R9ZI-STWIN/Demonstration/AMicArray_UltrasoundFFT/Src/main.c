@@ -125,7 +125,7 @@ int main(void)
   /* PWR Button initialization */
   BSP_PB_PWR_Init();
 
-  /* Sensor Manager initialization, only using PID (Platform Indepentent Drivers) */
+  /* Sensor Manager initialization, only using PID (Platform Independent Drivers) */
   SM_Peripheral_Init();
 
   /* Initialize AMIC_ARRAY peripherals and threads */

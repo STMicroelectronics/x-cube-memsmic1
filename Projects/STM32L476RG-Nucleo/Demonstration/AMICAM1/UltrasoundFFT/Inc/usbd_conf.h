@@ -23,6 +23,11 @@
 #ifndef __USBD_CONF_H
 #define __USBD_CONF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 #include <stdio.h>
@@ -52,16 +57,15 @@
   printf("\n");
 #else
 #define USBD_UsrLog(...)
-#endif
+#endif /* (USBD_DEBUG_LEVEL > 0) */
 
 #if (USBD_DEBUG_LEVEL > 1)
-
 #define  USBD_ErrLog(...)   printf("ERROR: ") ;\
   printf(__VA_ARGS__);\
   printf("\n");
 #else
 #define USBD_ErrLog(...)
-#endif
+#endif /* (USBD_DEBUG_LEVEL > 1) */
 
 #if (USBD_DEBUG_LEVEL > 2)
 #define  USBD_DbgLog(...)   printf("DEBUG : ") ;\
@@ -69,9 +73,14 @@
   printf("\n");
 #else
 #define USBD_DbgLog(...)
-#endif
+#endif /* (USBD_DEBUG_LEVEL > 2) */
 
 /* Exported functions ------------------------------------------------------- */
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_CONF_H */
 

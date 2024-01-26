@@ -1078,6 +1078,12 @@
         </group>
         <group>
             <name>User</name>
+            <group>
+                <name>Patch</name>
+                <file>
+                    <name>$PROJ_DIR$\..\Patch\stm32f7xx_hal_pcd_patch.c</name>
+                </file>
+            </group>
             <file>
                 <name>$PROJ_DIR$\..\Src\audio_application.c</name>
             </file>
@@ -1164,6 +1170,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\..\..\..\..\..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pcd.c</name>
+                <excluded>
+                    <configuration>STM32F7xx-MEMSMIC1</configuration>
+                </excluded>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\..\..\..\..\..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pcd_ex.c</name>

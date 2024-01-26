@@ -47,6 +47,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>Application/Patch</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Patch</locationURI>
+		</link>
+		<link>
 			<name>Application/STM4STM32</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>

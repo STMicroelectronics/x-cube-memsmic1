@@ -102,6 +102,11 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Src/main.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/stm32f4xx_hal_pcd_patch.c</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Patch/stm32f4xx_hal_pcd_patch.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/stm32xx_it.c</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Src/stm32xx_it.c</locationURI>

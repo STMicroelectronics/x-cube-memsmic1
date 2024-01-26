@@ -87,7 +87,7 @@ static void AMICAM1_Thread(void const *argument)
 
 #ifdef DATA_TEST
   static uint16_t usbTestData = 0;
-#endif
+#endif /* DATA_TEST */
 
   osEvent evt;
   for (;;)
@@ -129,7 +129,7 @@ static void AMICAM1_Thread(void const *argument)
     {
 #ifdef DATA_TEST
       usbTestData = 0;
-#endif
+#endif /* DATA_TEST */
       AMICAM1_Sensor_State = SM_SENSOR_STATE_SUSPENDED;
       ts_amicam1 = 0;
       AMICAM1_AUDIO_IN_Stop(AUDIO_IN_INSTANCE);

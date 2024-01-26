@@ -62,6 +62,11 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Src/stm32xx_it.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/syscalls.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Src/syscalls.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/usbd_audio_if.c</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Src/usbd_audio_if.c</locationURI>

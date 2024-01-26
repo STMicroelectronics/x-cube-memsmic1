@@ -56,11 +56,11 @@ modification in the application layer developed with the older versions of the d
 #define MAX_DECIMATION_FACTOR 128
 #endif  /* AUDIO_IN_SAMPLING_FREQUENCY */
 
-//  #define USE_SPI3
+/* #define USE_SPI3 */
 /*If you want to use SPI3 instead of SPI2 for M3 and M4, uncomment this define and
 close SB20 and SB21*/
 
-//  #define PDM_FREQ_16K 2048
+/* #define PDM_FREQ_16K 2048 */
 /*Uncomment if you need to change PDM clock frequency when AUDIO_IN_SAMPLING_FREQUENCY = 16000*/
 
 #ifdef __cplusplus

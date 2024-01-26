@@ -249,10 +249,10 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
   HAL_PCD_SetTxFiFo(&hpcd_USB_OTG_FS, 4, fifoSizePerEp);
 #if (N_IN_ENDPOINTS >4)
   HAL_PCD_SetTxFiFo(&hpcd_USB_OTG_FS, 5, fifoSizePerEp);
-#endif
-#endif
-#endif
-#endif
+#endif /* (N_IN_ENDPOINTS >4) */
+#endif /* (N_IN_ENDPOINTS >3) */
+#endif /* (N_IN_ENDPOINTS >2) */
+#endif /* (N_IN_ENDPOINTS >1) */
 
   return USBD_OK;
 }

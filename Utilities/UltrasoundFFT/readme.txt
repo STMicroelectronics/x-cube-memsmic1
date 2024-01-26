@@ -2,30 +2,24 @@
 @page UltrasoundFFT application for STWIN
 
 @verbatim
-******************************************************************************
-* @file    readme.txt  
-* @author  SRA - Central Labs
-* @version v1.0.1
-* @date    03-Apr-2020
-* @brief   This application contains an example which shows how to calculate
-*			 and stream FFT values from onboard analog mic to a PC GUI
-******************************************************************************
-* Copyright (c) 2020 STMicroelectronics
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or   
-* (at your option) any later version.                                 
-*                                                                     
-* This program is distributed in the hope that it will be useful,     
-* but WITHOUT ANY WARRANTY; without even the implied warranty of      
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the       
-* GNU General Public License for more details.                        
-*                                                                     
-* You should have received a copy of the GNU General Public License   
-* along with this program.  If not, see http://www.gnu.org/licenses/. 
-*
-******************************************************************************
+  ******************************************************************************
+  * @file    readme.txt  
+  * @author  SRA 
+  * @brief   This application contains an example which shows how to calculate
+  *			 and stream FFT values from onboard analog mic to a PC GUI
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  *
+  *
+  ******************************************************************************
 @endverbatim
 
 @par Application Description 
@@ -43,7 +37,11 @@ to make condition analysis in the ultrasound frequency domain on any kind of mac
 User can simply double-click on 'UltrasoundFFT.exe' to launch the application
 
 'SW_source' contains the source code of the UltrasoundFFT GUI.
-It is built in QTCreator environment using Qt5.13.1.
+
+Both SW_Executable and SW_source are built in QTCreator environment using Qt Creator 4.10.0
+- Based on Qt 5.13.1 (MSVC 2017, 32 bit).
+DLLs and libraries used are 32-bit based, so if you are using a 64-bit compiler/linker
+you must take care of possibile linking compatibility issues.
 
 Once the example starts, the board is in idle state, waiting for a 'start'
 command from the PC.
@@ -65,7 +63,3 @@ spectrogram of the data saved into the 'Acquisition' folder.
 'ReadFFT.py' was tested using Python 3.7 on Linux and Windows 10 (Anaconda environment).
 'ReadFFT.m' was tested using MATLABv2019a.
 
-
-
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
- */

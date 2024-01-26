@@ -21,6 +21,11 @@
 #ifndef __USBD_CONF_H
 #define __USBD_CONF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------ */
 #include "stm32wbxx_hal.h"
 #include <stdio.h>
@@ -80,6 +85,11 @@ void USBD_static_free(void *p);
 #endif  /* (USBD_DEBUG_LEVEL > 2) */
 
 /* Exported functions ------------------------------------------------------- */
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_CONF_H */
 

@@ -23,12 +23,18 @@
 #ifndef __AUDIO_APPLICATION_H
 #define __AUDIO_APPLICATION_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "cube_hal.h"
 
 
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
+#define ACOUSTIC_BF_MIC_DISTANCE 150
 
 /*Uncomment this define if you want to configure and start acquisition
 independentrly from USB functionalities*/
@@ -44,6 +50,12 @@ void SW_Task1_Callback(void);
 void SW_Task2_Callback(void);
 void SW_Task1_Start(void);
 void SW_Task2_Start(void);
+
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __AUDIO_APPLICATION_H */
 

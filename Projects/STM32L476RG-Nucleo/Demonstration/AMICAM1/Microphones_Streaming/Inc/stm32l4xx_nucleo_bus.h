@@ -46,11 +46,11 @@ extern "C" {
 
 #ifndef BUS_SPI1_POLL_TIMEOUT
 #define BUS_SPI1_POLL_TIMEOUT                   0x1000U
-#endif
+#endif /* BUS_SPI1_POLL_TIMEOUT */
 /* SPI1 Baud rate in bps  */
 #ifndef BUS_SPI1_BAUDRATE
 #define BUS_SPI1_BAUDRATE   10000000U /* baud rate of SPIn = 10 Mbps*/
-#endif
+#endif /* BUS_SPI1_BAUDRATE */
 
 /**
   * @}

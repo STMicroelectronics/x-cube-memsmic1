@@ -138,7 +138,7 @@ void Audio_Libraries_Init(void)
   libSoundSourceLoc_Handler_Instance.ptr_M2_channels = 4;
   libSoundSourceLoc_Handler_Instance.ptr_M3_channels = 4;
   libSoundSourceLoc_Handler_Instance.ptr_M4_channels = 4;
-  libSoundSourceLoc_Handler_Instance.samples_to_process = 512;
+  libSoundSourceLoc_Handler_Instance.samples_to_process = ACOUSTIC_SL_SAMPLES_TO_PROCESS;
   (void)AcousticSL_getMemorySize(&libSoundSourceLoc_Handler_Instance);
   libSoundSourceLoc_Handler_Instance.pInternalMemory = (uint32_t *)malloc(libSoundSourceLoc_Handler_Instance.internal_memory_size);
   error_value += AcousticSL_Init(&libSoundSourceLoc_Handler_Instance);
@@ -206,10 +206,10 @@ void SW_Task2_Callback(void)
   if (result[0] != -1)
   {
     char output[4];
-    int32_t n = sprintf(output, "%li", (int32_t)result[0]);
+    int32_t angle = sprintf(output, "%li", (int32_t)result[0]);
     (void)HAL_UART_Transmit(&UartHandle, (uint8_t *)"    ", 4, 0xFFFF);
     (void)HAL_UART_Transmit(&UartHandle, (uint8_t *)"\r", 1, 0xFFFF);
-    (void)HAL_UART_Transmit(&UartHandle, (uint8_t *)output, (uint16_t)n, 0xFFFF);
+    (void)HAL_UART_Transmit(&UartHandle, (uint8_t *)output, (uint16_t)angle, 0xFFFF);
   }
 }
 

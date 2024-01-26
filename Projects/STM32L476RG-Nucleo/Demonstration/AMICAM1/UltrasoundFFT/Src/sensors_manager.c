@@ -63,7 +63,7 @@ void SM_TIM_Init(void)
   if (HAL_TIM_Base_Init(&hsm_tim) != HAL_OK)
   {
     /* Initialization Error */
-//    Error_Handler();
+    /* Error_Handler(); */ 
   }
 }
 
@@ -73,7 +73,7 @@ void SM_TIM_Start(void)
   if (HAL_TIM_Base_Start(&hsm_tim) != HAL_OK)
   {
     /* Starting Error */
-//    Error_Handler();
+    /* Error_Handler(); */ 
   }
 }
 
@@ -83,7 +83,7 @@ void SM_TIM_Stop(void)
   if (HAL_TIM_Base_Stop(&hsm_tim) != HAL_OK)
   {
     /* Starting Error */
-//    Error_Handler();
+    /* Error_Handler(); */ 
   }
   hsm_tim.Instance->CNT = 0;
 }

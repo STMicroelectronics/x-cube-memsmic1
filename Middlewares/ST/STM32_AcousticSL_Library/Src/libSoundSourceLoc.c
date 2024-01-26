@@ -146,7 +146,7 @@ static void FilterAngle(int32_t *SourceAngle, int32_t* LedStatus, uint16_t max_v
 /* Functions Definition ------------------------------------------------------*/
 static uint32_t libSoundSourceLoc_GetLibVersion(char *version)
 {
-  char str1[35] = "ST AcousticSL v3.0.0";
+  char str1[35] = "ST AcousticSL v3.1.1";
   
   (void)strcpy(version, str1);
   return strlen(str1);

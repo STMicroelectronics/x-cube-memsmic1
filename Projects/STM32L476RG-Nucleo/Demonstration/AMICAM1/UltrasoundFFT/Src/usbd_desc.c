@@ -67,7 +67,7 @@ USBD_DescriptorsTypeDef WCID_STREAMING_Desc =
 /* USB Standard Device Descriptor */
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 #pragma data_alignment=4
-#endif
+#endif /* defined ( __ICCARM__ ) */
 __ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_LEN_DEV_DESC] __ALIGN_END =
 {
   0x12,                       /* bLength */
@@ -95,7 +95,7 @@ __ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_LEN_DEV_DESC] __ALIGN_END =
 /* USB Standard Device Descriptor */
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 #pragma data_alignment=4
-#endif
+#endif /* defined ( __ICCARM__ ) */
 __ALIGN_BEGIN uint8_t USBD_LangIDDesc[USB_LEN_LANGID_STR_DESC] __ALIGN_END =
 {
   USB_LEN_LANGID_STR_DESC,
@@ -112,7 +112,7 @@ uint8_t USBD_StringSerial[USB_SIZ_STRING_SERIAL] =
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 #pragma data_alignment=4
-#endif
+#endif /* defined ( __ICCARM__ ) */
 __ALIGN_BEGIN uint8_t USBD_StrDesc[USBD_MAX_STR_DESC_SIZ] __ALIGN_END;
 
 /* Private functions ---------------------------------------------------------*/
@@ -218,7 +218,9 @@ uint8_t *USBD_WCID_STREAMING_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uin
   */
 static void Get_SerialNum(void)
 {
-  uint32_t deviceserial0, deviceserial1, deviceserial2;
+  uint32_t deviceserial0;
+  uint32_t deviceserial1;
+  uint32_t deviceserial2;
 
   deviceserial0 = *(uint32_t *)DEVICE_ID1;
   deviceserial1 = *(uint32_t *)DEVICE_ID2;

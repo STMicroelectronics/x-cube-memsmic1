@@ -62,7 +62,7 @@ static void SPI1_MspInit(SPI_HandleTypeDef *hSPI);
 static void SPI1_MspDeInit(SPI_HandleTypeDef *hSPI);
 #if (USE_CUBEMX_BSP_V2 == 1)
 static uint32_t SPI_GetPrescaler(uint32_t clk_src_hz, uint32_t baudrate_mbps);
-#endif
+#endif /* (USE_CUBEMX_BSP_V2 == 1) */
 
 /**
   * @}
@@ -105,7 +105,7 @@ int32_t BSP_SPI1_Init(void)
           return BSP_ERROR_MSP_FAILURE;
         }
       }
-#endif
+#endif /* (USE_HAL_SPI_REGISTER_CALLBACKS == 0) */
       if (ret == BSP_ERROR_NONE)
       {
         /* Init the SPI */
@@ -134,7 +134,7 @@ int32_t BSP_SPI1_DeInit(void)
     {
 #if (USE_HAL_SPI_REGISTER_CALLBACKS == 0)
       SPI1_MspDeInit(&hspi1);
-#endif
+#endif /* (USE_HAL_SPI_REGISTER_CALLBACKS == 0) */
       /* DeInit the SPI*/
       if (HAL_SPI_DeInit(&hspi1) == HAL_OK)
       {
@@ -373,7 +373,7 @@ static uint32_t SPI_GetPrescaler(uint32_t clock_src_hz, uint32_t baudrate_mbps)
 
   return presc;
 }
-#endif
+#endif /* (USE_CUBEMX_BSP_V2 == 1) */
 /**
   * @}
   */

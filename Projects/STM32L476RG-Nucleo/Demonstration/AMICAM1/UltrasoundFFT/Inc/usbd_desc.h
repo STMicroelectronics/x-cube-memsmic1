@@ -23,6 +23,11 @@
 #ifndef __USBD_DESC_H
 #define __USBD_DESC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_def.h"
 
@@ -36,6 +41,11 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 extern USBD_DescriptorsTypeDef WCID_STREAMING_Desc;
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_DESC_H */
 

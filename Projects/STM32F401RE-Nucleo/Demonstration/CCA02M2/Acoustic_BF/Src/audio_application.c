@@ -148,7 +148,7 @@ void Audio_Libraries_Init(void)
   /*Setup Beamforming dynamic parameters*/
   lib_Beamforming_Config_Instance.algorithm_type = ACOUSTIC_BF_TYPE_STRONG;
   lib_Beamforming_Config_Instance.M2_gain = 0.0f;
-  lib_Beamforming_Config_Instance.mic_distance = 150;
+  lib_Beamforming_Config_Instance.mic_distance = ACOUSTIC_BF_MIC_DISTANCE;
   lib_Beamforming_Config_Instance.volume = 24;
   error_value = AcousticBF_setConfig(&libBeamforming_Handler_Instance, &lib_Beamforming_Config_Instance);
 

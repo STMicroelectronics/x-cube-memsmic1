@@ -83,7 +83,7 @@ const int16_t vol_table[65] =
 static int8_t Audio_Init(uint32_t  AudioFreq, uint32_t BitRes, uint32_t ChnlNbr)
 {
 #ifndef DISABLE_USB_DRIVEN_ACQUISITION
-  return AMICAM1_AUDIO_IN_Init(AMICAM1_AUDIO_INSTANCE, &MicParams);
+  return AMICAM1_AUDIO_IN_Init(AUDIO_IN_INSTANCE, &MicParams);
 #else
   return BSP_ERROR_NONE;
 #endif  /* DISABLE_USB_DRIVEN_ACQUISITION */
@@ -106,7 +106,7 @@ static int8_t Audio_DeInit(uint32_t options)
 static int8_t Audio_Record(void)
 {
 #ifndef DISABLE_USB_DRIVEN_ACQUISITION
-  return AMICAM1_AUDIO_IN_Record(AMICAM1_AUDIO_INSTANCE, (uint8_t *) PCM_Buffer, 0);
+  return AMICAM1_AUDIO_IN_Record(AUDIO_IN_INSTANCE, (uint8_t *) PCM_Buffer, 0);
 #else
   return BSP_ERROR_NONE;
 #endif  /* DISABLE_USB_DRIVEN_ACQUISITION */
@@ -121,16 +121,14 @@ static int8_t Audio_VolumeCtl(int16_t Volume)
 {
   /* Call low layer volume setting function */
   uint32_t j = 0;
-  uint32_t mic_instance;
 
   /* Find the setting nearest to the desired setting */
   while (j < 64 && abs(Volume - vol_table[j]) > abs(Volume - vol_table[j + 1]))
   {
     j++;
   }
-  mic_instance = 0;
   /* Now do the volume adjustment */
-  return AMICAM1_AUDIO_IN_SetVolume(mic_instance, j);
+  return AMICAM1_AUDIO_IN_SetVolume(AUDIO_IN_INSTANCE, j);
 
 }
 
@@ -153,7 +151,7 @@ static int8_t Audio_MuteCtl(uint8_t cmd)
 static int8_t Audio_Stop(void)
 {
 #ifndef DISABLE_USB_DRIVEN_ACQUISITION
-  return AMICAM1_AUDIO_IN_Stop(AMICAM1_AUDIO_INSTANCE);
+  return AMICAM1_AUDIO_IN_Stop(AUDIO_IN_INSTANCE);
 #else
   return BSP_ERROR_NONE;
 #endif  /* DISABLE_USB_DRIVEN_ACQUISITION */

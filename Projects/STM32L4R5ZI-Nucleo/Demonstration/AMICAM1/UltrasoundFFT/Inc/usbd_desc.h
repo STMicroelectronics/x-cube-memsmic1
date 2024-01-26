@@ -32,10 +32,20 @@
 #define         DEVICE_ID2          (0x1FFF7594)
 #define         DEVICE_ID3          (0x1FFF7598)
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 #define  USB_SIZ_STRING_SERIAL       0x1A
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 extern USBD_DescriptorsTypeDef WCID_STREAMING_Desc;
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_DESC_H */
 

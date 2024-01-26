@@ -23,6 +23,11 @@
 #ifndef __USBD_DESC_H
 #define __USBD_DESC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_def.h"
 #define         DEVICE_ID1          (0x1FFF7A10)
@@ -36,6 +41,11 @@
 /* Exported functions ------------------------------------------------------- */
 extern USBD_DescriptorsTypeDef AUDIO_Desc;
 extern USBD_DescriptorsTypeDef VCP_Desc;
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_DESC_H */
 

@@ -39,7 +39,7 @@ extern "C" {
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846f
-#endif
+#endif /* M_PI */
 
 
 int32_t AMICAM1_Peripheral_Init(uint32_t AudioFreq, uint32_t ChnlNbrIn);

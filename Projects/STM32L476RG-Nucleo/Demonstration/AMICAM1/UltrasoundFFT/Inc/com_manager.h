@@ -23,6 +23,10 @@
 #ifndef __COM_MANAGER_H
 #define __COM_MANAGER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define COM_MAX_SENSORS 10
 
 #define COM_TYPE_ACC    1
@@ -199,6 +203,9 @@ uint8_t COM_GetSubSensorNumber(uint8_t sID);
 
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __COM_MANAGER_H */
 

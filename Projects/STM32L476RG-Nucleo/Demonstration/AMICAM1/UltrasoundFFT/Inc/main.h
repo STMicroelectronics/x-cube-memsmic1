@@ -52,13 +52,13 @@ extern "C" {
 
 #ifndef M_PI
 #define M_PI   3.14159265358979323846264338327950288
-#endif
+#endif /* M_PI */
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 
-//#define DATA_TEST     /* Uncomment to use fake data for debugging */
+/* #define DATA_TEST */     /* Uncomment to use fake data for debugging */
 
 /* Memory management macros */
 #define HSD_malloc               malloc

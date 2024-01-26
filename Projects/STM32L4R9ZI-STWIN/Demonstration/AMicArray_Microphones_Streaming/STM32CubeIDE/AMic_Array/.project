@@ -27,6 +27,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>Application/Patch</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Patch</locationURI>
+		</link>
+		<link>
 			<name>Application/SW4STM32/startup_stm32l4r9xx.s</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/startup_stm32l4r9xx.s</locationURI>

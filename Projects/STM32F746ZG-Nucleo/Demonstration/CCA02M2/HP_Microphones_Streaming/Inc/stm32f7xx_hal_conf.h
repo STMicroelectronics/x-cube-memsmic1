@@ -139,7 +139,7 @@ in voltage and temperature.  */
 #define  TICK_INT_PRIORITY            ((uint32_t)0x0F) /*!< tick interrupt priority */
 #define  USE_RTOS                     0
 #define  PREFETCH_ENABLE              1
-#define  ART_ACCLERATOR_ENABLE        1 /* To enable instruction cache and prefetch */
+#define  ART_ACCELERATOR_ENABLE       1 /* To enable instruction cache and prefetch */
 
 /* ########################## Assert Selection ############################## */
 /**

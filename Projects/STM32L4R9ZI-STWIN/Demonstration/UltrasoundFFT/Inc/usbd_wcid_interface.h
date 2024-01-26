@@ -23,6 +23,11 @@
 #ifndef __USBD_WCID_STREAMING_IF_H
 #define __USBD_WCID_STREAMING_IF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_wcid_streaming.h"
 #include "com_manager.h"
@@ -55,7 +60,9 @@ extern USBD_HandleTypeDef USBD_Device;
 /* Exported functions ------------------------------------------------------- */
 
 
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_WCID_STREAMING_IF_H */
 

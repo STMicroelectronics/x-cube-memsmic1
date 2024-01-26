@@ -27,7 +27,7 @@ The package also offers an example to exploit the Performance Mode of the **MP23
 	- **NUCLEO-L476RG**
     - **NUCLEO-F746ZG**
 	- **P-NUCLEO-WB55**
-    - **NUCLEO-L4R5ZI**
+    - **NUCLEO-L4R5ZI** (only MB1312 A-01 version is supported)
 - Examples implementation available for **STEVAL-STWINKT1B** and STEVAL-STWINKT1 SensorTile Wireless Industrial Node (STWIN) development kits and for the **STEVAL-STWINMAV1**
 microphone array expansion board.
 
@@ -54,15 +54,21 @@ Here is the list of references to user documents:
 
 ## Known Limitations
 
--  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
--  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
--  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
+Requirements not met
+
+  Headline
+  ----------------------------------------------------------
+  STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF example in Keil generates a warning. It is not impacting the demo performance, so you can ignore it. See details from [arm](https://developer.arm.com/documentation/ka002865/latest/) for further details.
+  Examples for NUCLEO-L4R5ZI has been developed and tested only on MB1312 A-01 version. Later versions changed HW configuration and by default are not compatible anymore with X-NUCLEO-AMICAM1 board.
+  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
+  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
+  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
 
 ## Development Toolchains and Compilers
 
 -   IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1
 -   RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.37.0
--   STM32CubeIDE Version 1.10.1
+-   STM32CubeIDE Version 1.14.0
 
 ## Supported Devices and Boards
 

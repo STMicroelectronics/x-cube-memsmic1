@@ -23,6 +23,11 @@
 #ifndef __USBD_AUDIO_IF_H
 #define __USBD_AUDIO_IF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_audio_in.h"
 #include "cube_hal.h"
@@ -32,6 +37,10 @@
 /* Exported functions ------------------------------------------------------- */
 void Send_Audio_to_USB(int16_t *audioData, uint16_t PCMSamples);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __USBD_AUDIO_IF_H */
 

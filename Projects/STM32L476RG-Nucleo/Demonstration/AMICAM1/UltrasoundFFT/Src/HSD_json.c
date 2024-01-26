@@ -276,7 +276,8 @@ static int32_t parse_Device_from(char *SerializedJSON, COM_Device_t *Device)
 {
   JSON_Object *JSON_subSensorObj;
   JSON_Array *JSON_subSensorParser;
-  uint32_t ii, size;
+  uint32_t ii;
+  uint32_t size;
   char *StatusText;
 
   JSON_Value *tempJSON = json_parse_string(SerializedJSON);
@@ -391,7 +392,8 @@ static int32_t parse_Status_from(char *SerializedJSON, COM_SensorStatus_t *senso
 {
   JSON_Object *JSON_subSensorObj;
   JSON_Array *JSON_subSensorParser;
-  uint32_t ii, size;
+  uint32_t ii;
+  uint32_t size;
 
   JSON_Value *tempJSON = json_parse_string(SerializedJSON);
   JSON_Object *JSON_ParseHandler = json_value_get_object(tempJSON);

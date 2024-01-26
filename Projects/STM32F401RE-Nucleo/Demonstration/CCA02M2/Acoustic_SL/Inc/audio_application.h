@@ -23,6 +23,11 @@
 #ifndef __AUDIO_APPLICATION_H
 #define __AUDIO_APPLICATION_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "cube_hal.h"
 
@@ -51,6 +56,7 @@
 /** @defgroup AUDIO_APPLICATION_Exported_Defines
   * @{
   */
+#define ACOUSTIC_SL_SAMPLES_TO_PROCESS 512
 
 /*Uncomment this define if you want to configure and start acquisition
 independentrly from USB functionalities*/
@@ -90,6 +96,9 @@ void SW_Task2_Start(void);
   */
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __AUDIO_APPLICATION_H */
 

@@ -67,7 +67,7 @@ void FFT_Lib_Init(uint32_t FFTLen, float Overlap)
 #ifdef FFT_STATIC_ALLOCATION
   userBuff_input = calloc(FFT_getMemorySize(&audio_fft_instance) / sizeof(float), sizeof(float));
   audio_fft_instance.init_params.userBuffer = userBuff_input;
-#endif
+#endif /* FFT_STATIC_ALLOCATION */
   FFT_Init(&audio_fft_instance);
 
   /* Allocate output buffer */
@@ -99,12 +99,12 @@ static void FFT_Thread(void const *argument)
 
 #ifdef DATA_TEST
   static uint16_t usbTestData = 0;
-#endif
+#endif /* DATA_TEST */
 
 #if (FFT_OUTPUT == FFT_AVERAGE)
   uint16_t nAccTotal = 10;
   uint16_t nAcc = 0;
-#endif
+#endif /* (FFT_OUTPUT == FFT_AVERAGE) */
 
   FFT_Lib_Init(512, 0.5f);
 
@@ -146,7 +146,7 @@ static void FFT_Thread(void const *argument)
       USBD_WCID_STREAMING_FillTxDataBuffer(&USBD_Device, 0, (uint8_t *)FFT_Average,
                                            sizeof(float) * audio_fft_instance.FFT_len / 2);
     }
-#endif
+#endif /* FFT_OUTPUT */
 
 #ifdef DATA_TEST
     uint16_t i = 0;
@@ -156,7 +156,7 @@ static void FFT_Thread(void const *argument)
     {
       *p16++ = usbTestData++;
     }
-#endif
+#endif /* DATA_TEST */
   }
 }
 

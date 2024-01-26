@@ -99,7 +99,7 @@ int main(void)
   /* Set default device description */
   set_default_description();
 
-  /* Sensor Manager initialization, only using PID (Platform Indepentent Drivers) */
+  /* Sensor Manager initialization, only using PID (Platform Independent Drivers) */
   SM_Peripheral_Init();
 
   /* Initialize AMICAM1 peripherals and threads */

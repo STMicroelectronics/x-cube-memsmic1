@@ -23,6 +23,11 @@
 #ifndef __AUDIO_APPLICATION_H
 #define __AUDIO_APPLICATION_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 #include "stm32l4xx.h"
@@ -97,6 +102,9 @@ void SW_Task2_Start(void);
   */
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __AUDIO_APPLICATION_H */
 
