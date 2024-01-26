@@ -33,7 +33,7 @@ microphone array expansion board.
 
 The figure below shows the overall architecture.
 
-![](_htmresc/X-CUBE-MEMSMIC1_components.PNG)
+![](_htmresc/X-CUBE-MEMSMIC1_components.png)
 
 - At the bottom layer there are the HW components: the STM32 MCU and the MP34DT06J digital MEMS microphone or the MP23ABS1 analog MEMS microphone.
 - The drivers abstract low level details of the hardware and allow the middleware layer to provide functionalities 
@@ -54,15 +54,11 @@ Here is the list of references to user documents:
 
 ## Known Limitations
 
-Requirements not met
-
-  Headline
-  ----------------------------------------------------------
-  STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF example in Keil generates a warning. It is not impacting the demo performance, so you can ignore it. See details from [arm](https://developer.arm.com/documentation/ka002865/latest/) for further details.
-  Examples for NUCLEO-L4R5ZI has been developed and tested only on MB1312 A-01 version. Later versions changed HW configuration and by default are not compatible anymore with X-NUCLEO-AMICAM1 board.
-  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
-  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
-  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
+- STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF example in Keil generates a warning. It is not impacting the demo performance, so you can ignore it. See details from [arm](https://developer.arm.com/documentation/ka002865/latest/) for further details.
+- Examples for NUCLEO-L4R5ZI has been developed and tested only on MB1312 A-01 version. Later versions changed HW configuration and by default are not compatible anymore with X-NUCLEO-AMICAM1 board.
+- **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
+- Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
+- To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
 
 ## Development Toolchains and Compilers
 
