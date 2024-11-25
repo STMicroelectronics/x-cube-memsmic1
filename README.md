@@ -2,6 +2,15 @@
 
 ![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-cube-memsmic1.svg?color=brightgreen)
 
+> [!NOTE]
+> ## **X-CUBE-MEMSMIC1** software package is not available anymore in this repository
+> 
+> In this repository, the * `./Middlewares/ST/STM32_Audio` middleware libraries and the related projects (demos, applications, and examples) are **not available** here as they (the middleware libraries) are subject to some restrictive license terms requiring the user's approval via a "click thru" procedure.
+> 
+> If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here]https://www.st.com/en/embedded-software/x-cube-memsmic1.html). You will be prompted to login or to register in case you have no account.
+
+## Overview
+
 The **X-CUBE-MEMSMIC1** software package is an expansion for **STM32Cube**. 
 
 This software provides drivers running on **STM32** for the acquisition of ST digital MEMS microphones (**MP34DT06J**) and ST analog MEMS microphones (**MP23ABS1**). 
@@ -33,7 +42,7 @@ microphone array expansion board.
 
 The figure below shows the overall architecture.
 
-![](_htmresc/X-CUBE-MEMSMIC1_components.png)
+![](_htmresc/X-CUBE-MEMSMIC1_components.PNG)
 
 - At the bottom layer there are the HW components: the STM32 MCU and the MP34DT06J digital MEMS microphone or the MP23ABS1 analog MEMS microphone.
 - The drivers abstract low level details of the hardware and allow the middleware layer to provide functionalities 
@@ -54,17 +63,21 @@ Here is the list of references to user documents:
 
 ## Known Limitations
 
-- STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF example in Keil generates a warning. It is not impacting the demo performance, so you can ignore it. See details from [arm](https://developer.arm.com/documentation/ka002865/latest/) for further details.
-- Examples for NUCLEO-L4R5ZI has been developed and tested only on MB1312 A-01 version. Later versions changed HW configuration and by default are not compatible anymore with X-NUCLEO-AMICAM1 board.
-- **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
-- Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
-- To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
+Requirements not met
+
+  Headline
+  ----------------------------------------------------------
+  STM32L4R5ZI-Nucleo/AMICAM1/AcousticBF example in Keil generates a warning. It is not impacting the demo performance, so you can ignore it. See details from [arm](https://developer.arm.com/documentation/ka002865/latest/) for further details.
+  Examples for NUCLEO-L4R5ZI has been developed and tested only on MB1312 A-01 version. Later versions changed HW configuration and by default are not compatible anymore with X-NUCLEO-AMICAM1 board.
+  **High Performance Microphones Streaming** example uses the new **HP_PDMFilter** library and is compatible only with **STEVAL-MIC006V1**. The example is available on STM32F401 and STM32F746 for X-NUCLEO-CCA02M2.
+  Beamforming and Source localization examples are available only on STM32F401 for X-NUCLEO-CCA02M2 and on STM32L4+ for X-NUCLEO-AMICAM1. A Source localization example is also available on STWIN board.
+  To use X-NUCLEO-AMICAM1 safely, read carefully hardware configuration needed. See [UM1901](https://www.st.com/resource/en/user_manual/dm00187405.pdf) and [UM2649](https://www.st.com/resource/en/user_manual/dm00663665.pdf)
 
 ## Development Toolchains and Compilers
 
 -   IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1
--   RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.37.0
--   STM32CubeIDE Version 1.14.0
+-   RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.38.0
+-   STM32CubeIDE Version 1.16.1
 
 ## Supported Devices and Boards
 
