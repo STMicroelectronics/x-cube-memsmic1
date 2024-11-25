@@ -7,7 +7,7 @@
 > 
 > In this repository, the * `./Middlewares/ST/STM32_Audio` middleware libraries and the related projects (demos, applications, and examples) are **not available** here as they (the middleware libraries) are subject to some restrictive license terms requiring the user's approval via a "click thru" procedure.
 > 
-> If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here]https://www.st.com/en/embedded-software/x-cube-memsmic1.html). You will be prompted to login or to register in case you have no account.
+> If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here](https://www.st.com/en/embedded-software/x-cube-memsmic1.html). You will be prompted to login or to register in case you have no account.
 
 ## Overview
 
@@ -42,7 +42,7 @@ microphone array expansion board.
 
 The figure below shows the overall architecture.
 
-![](_htmresc/X-CUBE-MEMSMIC1_components.PNG)
+![](_htmresc/X-CUBE-MEMSMIC1_components.png)
 
 - At the bottom layer there are the HW components: the STM32 MCU and the MP34DT06J digital MEMS microphone or the MP23ABS1 analog MEMS microphone.
 - The drivers abstract low level details of the hardware and allow the middleware layer to provide functionalities 
